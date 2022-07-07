@@ -58,7 +58,7 @@ class AdnuntiusCoordinator: NSObject, AdLoadCompletionHandler, AdnSdkHandler {
     func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
         print("onAdResponse: width: \(width), height: \(height)")
         parent?.width = CGFloat(width)
-        parent?.height = CGFloat(height)
+        parent?.height = CGFloat(height+20)
     }
 
     func onClose(_ view: AdnuntiusAdWebView) {
