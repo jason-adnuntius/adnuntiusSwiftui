@@ -15,7 +15,7 @@ struct ContentView: View {
         ScrollView {
             Text("Some text")
             AdnuntiusRepresentable(auId: "00000000000b42ef", width: $adWidth, height: $adHeight)
-                .frame(width: self.adWidth, height: self.adHeight)
+                .frame(minWidth: self.adWidth, maxWidth: .infinity, minHeight: self.adHeight, maxHeight: .infinity)
             Text("Some text")
         }
     }
