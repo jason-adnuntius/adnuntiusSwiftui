@@ -1,0 +1,7 @@
+.DS_STORE
+.idea
+Carthage
+build
+xcuserdata
+Cartfile.resolved
+

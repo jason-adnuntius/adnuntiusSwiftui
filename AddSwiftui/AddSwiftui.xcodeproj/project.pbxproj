@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26AB449E2876C9D1007FED1A /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 26AB449D2876C9D1007FED1A /* AdnuntiusSDK */; };
 		92F778052874222600CE5F79 /* AddSwiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F778042874222600CE5F79 /* AddSwiftuiApp.swift */; };
 		92F778072874222600CE5F79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F778062874222600CE5F79 /* ContentView.swift */; };
 		92F778092874222800CE5F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F778082874222800CE5F79 /* Assets.xcassets */; };
 		92F7780C2874222800CE5F79 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92F7780B2874222800CE5F79 /* Preview Assets.xcassets */; };
 		92F778132874228000CE5F79 /* AdnuntiusRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F778122874228000CE5F79 /* AdnuntiusRepresentable.swift */; };
-		92F77816287422ED00CE5F79 /* AdnuntiusSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 92F77815287422ED00CE5F79 /* AdnuntiusSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,18 +29,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F77816287422ED00CE5F79 /* AdnuntiusSDK in Frameworks */,
+				26AB449E2876C9D1007FED1A /* AdnuntiusSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		265B329928757CDD004D52D1 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		26CF1BA128757D1F00CC571E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92F777F82874222600CE5F79 = {
 			isa = PBXGroup;
 			children = (
+				265B329928757CDD004D52D1 /* Packages */,
 				92F778032874222600CE5F79 /* AddSwiftui */,
 				92F778022874222600CE5F79 /* Products */,
+				26CF1BA128757D1F00CC571E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,7 +105,7 @@
 			);
 			name = AddSwiftui;
 			packageProductDependencies = (
-				92F77815287422ED00CE5F79 /* AdnuntiusSDK */,
+				26AB449D2876C9D1007FED1A /* AdnuntiusSDK */,
 			);
 			productName = AddSwiftui;
 			productReference = 92F778012874222600CE5F79 /* AddSwiftui.app */;
@@ -120,7 +136,8 @@
 			);
 			mainGroup = 92F777F82874222600CE5F79;
 			packageReferences = (
-				92F77814287422EC00CE5F79 /* XCRemoteSwiftPackageReference "ios_sdk" */,
+				26CF1BAE2875919900CC571E /* XCRemoteSwiftPackageReference "ios_sdk" */,
+				26AB449C2876C9D1007FED1A /* XCRemoteSwiftPackageReference "ios_sdk" */,
 			);
 			productRefGroup = 92F778022874222600CE5F79 /* Products */;
 			projectDirPath = "";
@@ -279,7 +296,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AddSwiftui/Preview Content\"";
-				DEVELOPMENT_TEAM = 4835QGEA88;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -308,7 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AddSwiftui/Preview Content\"";
-				DEVELOPMENT_TEAM = 4835QGEA88;
+				DEVELOPMENT_TEAM = X2YM83V7A7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,20 +370,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		92F77814287422EC00CE5F79 /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
+		26AB449C2876C9D1007FED1A /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = jp_provide_width_height_more_reliably;
+				kind = branch;
+			};
+		};
+		26CF1BAE2875919900CC571E /* XCRemoteSwiftPackageReference "ios_sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Adnuntius/ios_sdk";
+			requirement = {
+				branch = jp_provide_width_height_more_reliably;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		92F77815287422ED00CE5F79 /* AdnuntiusSDK */ = {
+		26AB449D2876C9D1007FED1A /* AdnuntiusSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 92F77814287422EC00CE5F79 /* XCRemoteSwiftPackageReference "ios_sdk" */;
+			package = 26CF1BAE2875919900CC571E /* XCRemoteSwiftPackageReference "ios_sdk" */;
 			productName = AdnuntiusSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -25,12 +25,13 @@ struct AdnuntiusRepresentable: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> AdnuntiusAdWebView {
-        if adnuntiusAdWebView.loadAd(getRequest(), completionHandler: coordinator, adnSdkHandler: coordinator) == false {}
-
+        adnuntiusAdWebView.enableDebug(true)
+        adnuntiusAdWebView.loadAd(getRequest(), coordinator)
         return adnuntiusAdWebView
     }
 
-    func updateUIView(_ uiView: AdnuntiusAdWebView, context: Context) {}
+    func updateUIView(_ uiView: AdnuntiusAdWebView, context: Context) {
+    }
 
     func makeCoordinator() -> AdnuntiusCoordinator {
         coordinator.parent = self
@@ -39,29 +40,22 @@ struct AdnuntiusRepresentable: UIViewRepresentable {
 
     func getRequest() -> AdRequest {
         let adRequest = AdRequest(auId)
-        adRequest.kv = ["version": ["6s"]]
-        adRequest.useCookies = false
+        adRequest.livePreview("p6zfczpgyjgyk71x", "2ftc67cfl1cbsdfl")
+        adRequest.keyValue("version", "video")
         return adRequest
     }
 }
 
-class AdnuntiusCoordinator: NSObject, AdLoadCompletionHandler, AdnSdkHandler {
+class AdnuntiusCoordinator: NSObject, LoadAdHandler {
     var parent: AdnuntiusRepresentable?
-    func onNoAdResponse(_ view: AdnuntiusAdWebView) {
-        print("onNoAdResponse:")
-    }
 
-    func onFailure(_ view: AdnuntiusAdWebView, _ message: String) {
-        print("onFailure: \(message)")
+    func onAdResponse(_ response: AdResponseInfo) {
+        print("onAdResponse: \(response)")
+        parent?.width = CGFloat(response.definedWidth)
+        parent?.height = CGFloat(response.definedHeight+20)
     }
-
-    func onAdResponse(_ view: AdnuntiusAdWebView, _ width: Int, _ height: Int) {
-        print("onAdResponse: width: \(width), height: \(height)")
-        parent?.width = CGFloat(width)
-        parent?.height = CGFloat(height+20)
-    }
-
-    func onClose(_ view: AdnuntiusAdWebView) {
-        print("onClose:")
+    
+    func onAdResize(_ response: AdResponseInfo) {
+        print("onAdResize: \(response)")
     }
 }
